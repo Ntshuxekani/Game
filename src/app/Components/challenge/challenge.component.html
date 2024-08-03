@@ -1,0 +1,17 @@
+<div class="challenge-container">
+    <h2>{{ challenge?.name }}</h2>
+    <p>{{ challenge?.description }}</p>
+    <mat-form-field appearance="fill">
+      <mat-label>Code Editor</mat-label>
+      <textarea matInput [(ngModel)]="code"></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="runCode()">Run Code</button>
+    <button mat-button color="accent" (click)="showHint()">Hint</button>
+    <div class="output">
+      <h3>Output</h3>
+      <pre>{{ output }}</pre>
+    </div>
+    <app-hint *ngIf="hintVisible" [hint]="challenge?.hint || ''" (close)="hintVisible = false"></app-hint>
+
+  </div>
+  
