@@ -28,7 +28,7 @@ export class ChallengeComponent implements OnInit {
 
   getChallengeById(id: number): Challenge | null {
     const challenges: Challenge[] = [
-      { id: 1, name: 'Variables and Data Types', description: 'Learn about variables.', hint: 'Use let or const to declare variables.' },
+      { id: 1, name: 'Variables and Data Types', description: 'Learn about variables and data types.', hint: 'Use let or const to declare variables.' },
       { id: 2, name: 'Loops', description: 'Learn about loops.', hint: 'Use for or while to create loops.' },
       // Add more challenges as needed
     ];
@@ -36,7 +36,6 @@ export class ChallengeComponent implements OnInit {
   }
 
   runCode(): void {
-    // Placeholder for code execution logic
     this.output = `Executing: ${this.code}`;
   }
 
@@ -44,4 +43,3 @@ export class ChallengeComponent implements OnInit {
     this.hintVisible = true;
   }
 }
-

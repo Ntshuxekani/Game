@@ -8,5 +8,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class HintComponent {
   @Input() hint: string = '';
   @Output() close = new EventEmitter<void>();
+
+  onClose(): void {
+    this.close.emit();
+  }
 }
 

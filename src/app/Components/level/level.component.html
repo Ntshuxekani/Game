@@ -1,12 +1,15 @@
 <div class="level-container">
-    <h2>Select a Level</h2>
-    <mat-list>
-      <mat-list-item *ngFor="let level of levels">
-        <h3 matLine>{{ level.name }}</h3>
-        <p matLine>{{ level.description }}</p>
-        <button mat-button color="primary" [routerLink]="['/challenge', level.id]">Start</button>
-      </mat-list-item>
-    </mat-list>
-  </div>
-  
+  <h2>Select a Level</h2>
+  <mat-list>
+    <mat-list-item *ngFor="let level of levels">
+      <h3 matLine>{{ level.name }}</h3>
+      <p matLine>{{ level.description }}</p>
+      <button mat-button color="primary" [routerLink]="['/challenge', level.id]" (click)="logNavigation(level.id)">Start</button>
+    </mat-list-item>
+  </mat-list>
+</div>
+
+
+
+
   

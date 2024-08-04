@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface Level {
   id: number;
@@ -13,16 +14,24 @@ interface Level {
 })
 export class LevelComponent implements OnInit {
   levels: Level[] = [
-    { id: 1, name: 'Introduction to Programming', description: 'Learn the basics of programming.' },
-    { id: 2, name: 'Frontend Basics', description: 'Get started with Angular.' },
-    { id: 3, name: 'Backend Development', description: 'Learn backend development with Java.' },
-    { id: 4, name: 'Database Integration', description: 'Interact with a Postgres database.' },
-    { id: 5, name: 'Full-Stack Application', description: 'Build a complete full-stack application.' }
+    { id: 1, name: 'Variables and Data Types', description: 'Learn about variables and data types.' },
+    { id: 2, name: 'Loops', description: 'Learn about loops.' },
+    // Add more levels as needed
   ];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    console.log('Levels loaded:', this.levels);
+  }
+
+  logNavigation(levelId: number): void {
+    console.log('Navigating to level:', levelId);
   }
 }
+
+
+
+
+
 
