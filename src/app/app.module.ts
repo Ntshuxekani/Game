@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -19,9 +20,10 @@ import { HintComponent } from './Components/hint/hint.component';
 import { RewardComponent } from './Components/reward/reward.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { HeaderComponent } from './Components/header/header.component';
-import { InstructionsComponent } from './instructions/instructions.component';
+
 import { RegisterComponent } from './Components/register/register.component';
 import { LoginComponent } from './Components/login/login.component';
+import { InstructionsComponent } from './Components/instructions/instructions.component';
 
 
 
@@ -52,7 +54,8 @@ import { LoginComponent } from './Components/login/login.component';
     MatListModule,
     MatCardModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

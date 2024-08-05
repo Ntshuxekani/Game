@@ -1,29 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/Services/auth.service';
-  // Ensure the path is correct
+
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
-  registerForm: FormGroup = this.fb.group({
-    name: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]],
-    password: ['', Validators.required]
-  });
+export class RegisterComponent {
+  registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {}
-
-  ngOnInit(): void {}
+  constructor(private fb: FormBuilder, private authService: AuthService) {
+    this.registerForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]]
+    });
+  }
 
   onSubmit() {
     if (this.registerForm.valid) {
       this.authService.register(this.registerForm.value).subscribe(response => {
-        console.log('Registration successful', response);
+        console.log('Registration successful:', response);
+      }, error => {
+        console.error('Registration failed:', error);
       });
     }
   }
 }
+

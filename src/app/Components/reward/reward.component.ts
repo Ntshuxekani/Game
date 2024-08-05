@@ -9,7 +9,7 @@ interface Reward {
 @Component({
   selector: 'app-reward',
   templateUrl: './reward.component.html',
-  styleUrls: ['./reward.component.css']
+  styleUrls: ['./reward.component.scss']
 })
 export class RewardComponent implements OnInit {
   rewards: Reward[] = [

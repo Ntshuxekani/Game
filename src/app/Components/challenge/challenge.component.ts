@@ -11,7 +11,7 @@ interface Challenge {
 @Component({
   selector: 'app-challenge',
   templateUrl: './challenge.component.html',
-  styleUrls: ['./challenge.component.css']
+  styleUrls: ['./challenge.component.scss']
 })
 export class ChallengeComponent implements OnInit {
   challenge: Challenge | null = null;
