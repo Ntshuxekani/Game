@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'level', component: LevelComponent },
-  { path: 'challenge/:id', component: ChallengeComponent },
+  { path: 'challenge', component: ChallengeComponent },
   { path: 'rewards', component: RewardComponent },
   { path: 'debug', component: DebugComponent },
   { path: 'instructions', component: InstructionsComponent },
