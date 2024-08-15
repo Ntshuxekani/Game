@@ -1,10 +1,16 @@
+
 <div class="home-container">
   <h1>Welcome to CodeQuest Adventure!</h1>
-  <p>Embark on a journey to learn programming through interactive challenges.</p>
-  <button mat-raised-button color="primary" routerLink="/level">Start Game</button>
-  <button mat-button color="accent" routerLink="/instructions">Instructions</button>
-  
+  <p>Your journey to learn programming starts here.</p>
+
+  <!-- Start Game button -->
+  <button mat-raised-button color="primary" [routerLink]="['/login']">Start Game</button>
+
+  <!-- Instructions button -->
+  <button mat-raised-button color="accent" [routerLink]="['/instructions']">Instructions</button>
 </div>
+
+
 
 
 

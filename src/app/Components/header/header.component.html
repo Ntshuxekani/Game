@@ -1,12 +1,11 @@
 <mat-toolbar color="primary">
-    <span>CodeQuest Adventure</span>
-    <span class="spacer"></span>
-    <a mat-button routerLink="/">Home</a>
-    <a mat-button routerLink="/levels">Levels</a>
-    <a mat-button routerLink="/rewards">Rewards</a>
-    <a mat-button routerLink="/login">Login</a>
-    <a mat-button routerLink="/register">Register</a>
-    <button (click)="logout()">Logout</button>
-
-  </mat-toolbar>
+  <span>CodeQuest Adventure</span>
+  <span class="spacer"></span>
+<nav>
+  <a routerLink="/">CodeQuest</a> 
+  <button *ngIf="!isLoggedIn()" mat-button [routerLink]="['/login']">Login</button>
+  <button *ngIf="!isLoggedIn()" mat-button [routerLink]="['/register']">Register</button>
+  <button *ngIf="isLoggedIn()" mat-button (click)="logout()">Logout</button>
+</nav>
+</mat-toolbar>
   

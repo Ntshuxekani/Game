@@ -1,20 +1,23 @@
 package com.personal.codegame.service;
 
-import com.personal.codegame.repository.UserRepository;
+import com.personal.codegame.auth.LoginRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
-  @Autowired
-  private UserRepository userRepository;
 
-  public User findByUsername(String username) {
-    return userRepository.findByUsername(username);
+  @Autowired
+  public void registerUser(User user) {
+    // Implement registration logic here
   }
 
-  public User save(User user) {
-    return userRepository.save(user);
+  public String authenticateUser(LoginRequest loginRequest) {
+    // Authenticate user and generate JWT token
+    String username = loginRequest.getUsername();
+    // Perform authentication logic
+    return jwtTokenProvider.generateToken(username);
   }
 }

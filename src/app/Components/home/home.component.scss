@@ -1,5 +1,37 @@
+/* home.component.scss */
 .home-container {
-    text-align: center;
-    margin-top: 50px;
-  }
-  
+  text-align: center;
+  padding: 20px;
+  color: #abb2bf; /* Light Gray */
+  background-color: #282c34; /* Dark Slate Gray */
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.mat-raised-button {
+  font-size: 16px;
+}
+
+button[color="primary"] {
+  background-color: #61dafb; /* Light Sky Blue */
+  color: #282c34; /* Dark Slate Gray */
+}
+
+button[color="primary"]:hover {
+  background-color: #98c379; /* Soft Green */
+}
+
+button[color="accent"] {
+  background-color: #98c379; /* Soft Green */
+  color: #282c34; /* Dark Slate Gray */
+}
+
+button[color="accent"]:hover {
+  background-color: #61dafb; /* Light Sky Blue */
+}

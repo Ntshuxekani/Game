@@ -7,32 +7,28 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  logout() {
-    throw new Error('Method not implemented.');
-  }
+  private apiUrl = 'http://localhost:8080/api/auth'; // Replace with your backend URL
 
-  private loggedInStatus = false;
-
-  constructor(private http: HttpClient) { }
-
-  login(user: any): Observable<any> {
-    return this.http.post('/api/login', user).pipe(
-      tap(response => {
-        this.loggedInStatus = true;
-      })
-    );
-  }
+  constructor(private http: HttpClient) {}
 
   register(user: any): Observable<any> {
-    return this.http.post('/api/register', user).pipe(
-      tap(response => {
-        this.loggedInStatus = true;
+    return this.http.post(`${this.apiUrl}/register`, user);
+  }
+
+  login(credentials: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/login`, credentials).pipe(
+      tap((response: any) => {
+        localStorage.setItem('token', response.token);
       })
     );
   }
 
-  isLoggedIn(): boolean {
-    return this.loggedInStatus;
+  logout(): void {
+    localStorage.removeItem('token');
+  }
+
+  isAuthenticated(): boolean {
+    return !!localStorage.getItem('token');
   }
 }
 

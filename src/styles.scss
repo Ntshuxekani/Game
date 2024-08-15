@@ -12,8 +12,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$codequest-adventure-primary: mat.define-palette(mat.$indigo-palette);
-$codequest-adventure-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$codequest-adventure-primary: mat.define-palette(mat.$grey-palette, 800);
+$codequest-adventure-accent: mat.define-palette(mat.$grey-palette,  A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $codequest-adventure-warn: mat.define-palette(mat.$red-palette);
@@ -28,16 +28,15 @@ $codequest-adventure-theme: mat.define-light-theme((
   )
 ));
 
-
-
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include mat.all-component-themes($codequest-adventure-theme);
 
-/* You can add global styles to this file, and also import other style files */
+
+
+
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';

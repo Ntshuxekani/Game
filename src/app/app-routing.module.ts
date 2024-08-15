@@ -9,15 +9,14 @@ import { DebugComponent } from './Components/debug/debug.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { LoginComponent } from './Components/login/login.component';
 import { InstructionsComponent } from './Components/instructions/instructions.component';
+import { AuthGuard } from './Components/guards/auth-guard.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'level', component: LevelComponent },
-  { path: 'challenge', component: ChallengeComponent },
-  { path: 'rewards', component: RewardComponent },
-  { path: 'debug', component: DebugComponent },
+  { path: 'level', component: LevelComponent, canActivate: [AuthGuard] },
+  { path: 'challenge/:id', component: ChallengeComponent, canActivate: [AuthGuard]},
   { path: 'instructions', component: InstructionsComponent },
 ];
 

@@ -1,16 +1,36 @@
+
 .login-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 16px;
-  }
-  
-  mat-form-field {
-    width: 100%;
-    margin-bottom: 16px;
-  }
-  
-  button {
-    width: 100%;
-  }
-  
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-container form {
+  width: 100%; /* Ensure the form takes full width of the container */
+}
+
+.login-container mat-form-field {
+  width: 100%; /* Ensure each form field takes full width of the form */
+  margin-bottom: 16px; /* Add space between fields */
+}
+
+.login-container button {
+  width: 100%; /* Make the login button take the full width of the form */
+  margin-top: 16px; /* Add some space above the button */
+}
+
+.login-container p {
+  margin-top: 16px;
+}
+
+.login-container a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}
